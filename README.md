@@ -5,8 +5,8 @@ This repo holds a "RESTful" spring server with multiple get routes.
 ## Architecture
 
 #### Main Files
-  * [Controllers](.src/main/java/com/chidrome/codefellowship/Controllers)
-  * [Models](.src/main/java/com/chidrome/codefellowship/Models)
+  * [Controllers](./src/main/java/com/chidrome/codefellowship/Controllers)
+  * [Models](./src/main/java/com/chidrome/codefellowship/Models)
   * [Main](./src/main/java/com/chidrome/codefellowship)
   
 ## Usage
