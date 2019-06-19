@@ -19,3 +19,5 @@ This repo holds a "RESTful" spring server with multiple get routes.
 * `/signup`: will take you to the signup page.
     * includes POST route that takes you to the `/profile` page to display users info
 * `/profile`: will display the currently logged in users profile.
+* `/addPost`: will display the form to add new posts
+    * includes POST route that redirects you to the `/profile` page after you submit posts
