@@ -1,9 +1,16 @@
 <header class="navbar" th:fragment="navbar">
     <h1>Code Fellowship</h1>
-    <nav>
+    <nav th:if="${user}">
         <a href="/">Home</a>
         <a href="/profile">Profile</a>
         <a href="/addPost">Post something</a>
+        <a href="/friends">Find Friend</a>
         <a href="/logout">Log out</a>
     </nav>
+    <nav th:if="${user} != true">
+        <a href="/">Home</a>
+        <a href="/login">Log in</a>
+        <a href="/signup">Sign up</a>
+    </nav>
+
 </header>

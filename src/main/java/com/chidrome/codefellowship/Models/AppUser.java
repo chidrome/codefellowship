@@ -9,6 +9,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class AppUser implements UserDetails {
@@ -16,6 +17,9 @@ public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
+
+    @ManyToMany
+    Set<AppUser> friends;
 
     @OneToMany(mappedBy = "creator")
     public List<Post> posts;
