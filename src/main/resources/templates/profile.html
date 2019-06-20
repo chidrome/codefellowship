@@ -13,17 +13,6 @@
     <h3>Date of birth: <span th:text="${principal.dob}"></span></h3>
     <h3>Bio: <span th:text="${principal.bio}"></span></h3>
 
-
-    <form method="post" action="/logout">
-        <label>
-            <input type="submit" value="log out">
-        </label>
-    </form>
-
-    <form method="get" action="/addPost">
-        <input type="submit" value="Add a post" />
-    </form>
-
     <h1>Here are your posts:</h1>
 
     <ul>

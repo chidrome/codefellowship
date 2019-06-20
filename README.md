@@ -21,3 +21,6 @@ This repo holds a "RESTful" spring server with multiple get routes.
 * `/profile`: will display the currently logged in users profile.
 * `/addPost`: will display the form to add new posts
     * includes POST route that redirects you to the `/profile` page after you submit posts
+* `/friends`: will display your friends.
+* `/friendsProfile`: will display the friend's profile that you are viewing.
+* `/searchFriends`: POST route to search for friend.

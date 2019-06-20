@@ -22,7 +22,10 @@ public class CodeFellowshipController {
     AppUserRepository appUserRepository;
 
     @GetMapping("/")
-    public String getHomePage(){
+    public String getHomePage(Principal p, Model m){
+//        AppUser currentUser = (AppUser)((UsernamePasswordAuthenticationToken) p).getPrincipal();
+//        AppUser posts = appUserRepository.findByUsername(p.getName());
+//        m.addAttribute("user", true);
         return "home";
     }
 
@@ -32,7 +35,14 @@ public class CodeFellowshipController {
         AppUser posts = appUserRepository.findByUsername(p.getName());
         m.addAttribute("principal", currentUser);
         m.addAttribute("posts", posts);
+        m.addAttribute("user", true);
         return "profile";
+    }
+
+    @GetMapping("/profile/{id}/friends")
+    public String getFriends(Principal p, Model m, @PathVariable long id){
+
+        return "friends";
     }
 
 

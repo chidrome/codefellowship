@@ -6,6 +6,7 @@ import com.chidrome.codefellowship.Repository.AppUserRepository;
 import com.chidrome.codefellowship.Repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
@@ -22,13 +23,16 @@ public class PostController {
     AppUserRepository appUserRepository;
 
     @GetMapping("/addPost")
-    public String getPostPage() {
+    public String getPostPage(Model m, Principal p) {
+        AppUser user = appUserRepository.findByUsername(p.getName());
+        m.addAttribute("user", true);
         return "post";
     }
 
     @PostMapping("/addPost")
-    public RedirectView createNewPost(String body, Principal p){
+    public RedirectView createNewPost(String body, Principal p, Model m){
         AppUser user = appUserRepository.findByUsername(p.getName());
+        m.addAttribute("user", true);
         Post newPost = new Post();
         newPost.body = body;
         newPost.createdAt = new Timestamp(System.currentTimeMillis());
